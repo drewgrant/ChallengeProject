@@ -1,24 +1,3 @@
-%  mfcc - Mel frequency cepstrum coefficient analysis.
-%   [ceps,freqresp,fb,fbrecon,freqrecon] = ...
-%			mfcc(input, samplingRate, [frameRate])
-% Find the cepstral coefficients (ceps) corresponding to the
-% input.  Four other quantities are optionally returned that
-% represent:
-%	the detailed fft magnitude (freqresp) used in MFCC calculation, 
-%	the mel-scale filter bank output (fb)
-%	the filter bank output by inverting the cepstrals with a cosine 
-%		transform (fbrecon),
-%	the smooth frequency response by interpolating the fb reconstruction 
-%		(freqrecon)
-%  -- Malcolm Slaney, August 1993
-% Modified a bit to make testing an algorithm easier... 4/15/94
-% Fixed Cosine Transform (indices of cos() were swapped) - 5/26/95
-% Added optional frameRate argument - 6/8/95
-% Added proper filterbank reconstruction using inverse DCT - 10/27/95
-% Added filterbank inversion to reconstruct spectrum - 11/1/95
-
-% (c) 1998 Interval Research Corporation  
-
 function [ceps,freqresp,fb,fbrecon,freqrecon] = ...
 		mfcc(input, samplingRate, frameRate)
 global mfccDCTMatrix mfccFilterWeights
